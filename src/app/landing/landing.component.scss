@@ -55,10 +55,11 @@
   }
 
   .content-title {
-    line-height: 45px;
+    line-height: 40px;
     font-size: 20px;
     font-family: 'Changa', sans-serif;
-    max-width: 500px;
+    max-width: 520px;
+    margin: 15px 0;
   }
 
   .content-center {
@@ -87,7 +88,7 @@
     color: white;
     margin-top: 64px;
     padding-top: 15%;
-    background: url("/assets/cover_pic.jpeg");
+    background: url("/assets/cover_pic.jpg");
     width: 100%;
     background-repeat: no-repeat;
     background-position: top;
@@ -114,7 +115,7 @@
     border-top: 3px solid #f1be03;
     color: #b1b1b1;
     &:hover {
-      box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.2) !important;
+      box-shadow: 0 4px 10px 0px #f1be03 !important;
     }
     .choose-plan{
       background: #f1be03;
@@ -159,5 +160,10 @@
     background-color: #242424;
     padding: 30px 20px;
     min-width: 100%;
+    min-width: -webkit-fill-available;
+  }
+
+  .float-right{
+    float: right;
   }
 }
