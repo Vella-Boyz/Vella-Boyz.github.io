@@ -1,0 +1,17 @@
+<form class="example-form">
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="1rem">
+    <mat-form-field class="example-full-width"  appearance="outline">
+      <mat-label>Enter Email ID</mat-label>
+      <input matInput [formControl]="emailFormControl" >
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    
+    <button mat-stroked-button class="Submit" aria-label="LOGIN" type="submit" (click)="submitForm()">
+      Submit  </button>
+  </div>
+</form>
