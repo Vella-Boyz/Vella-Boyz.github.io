@@ -1,8 +1,10 @@
-<form class="example-form">
+<form ngNoForm class="example-form" nctype="text/plain"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSf6o4Fbhpp4b8vH1vvPLQD0HZ9ZCoh7CQ7SKQFisDZ08xOo_A/formResponse?"
+  target="hidden_iframe">
   <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="1rem">
-    <mat-form-field class="example-full-width"  appearance="outline">
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Enter Email ID</mat-label>
-      <input matInput [formControl]="emailFormControl" >
+      <input matInput [formControl]="emailFormControl" type="text" name="entry.1230298494" id="entry.1230298494" email>
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
       </mat-error>
@@ -10,8 +12,11 @@
         Email is <strong>required</strong>
       </mat-error>
     </mat-form-field>
-    
-    <button mat-stroked-button class="Submit" aria-label="LOGIN" type="submit" (click)="submitForm()">
-      Submit  </button>
+
+    <button mat-stroked-button class="Submit" aria-label="LOGIN" type="submit" (click)="submitForm()"
+      [disabled]=emailFormControl.invalid>
+      Submit </button>
   </div>
 </form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="submitForm()"></iframe>
